@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function hello() {
+        var output = document.getElementById('output');
+        var x = 6;
+        var y = 4;
+        do {
+          x *= y;
+        } while (x < y);
+        output.innerHTML = `The number is: ${x}`;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="number" min="0" max="100" value="1" autofocus />
+    <button id="clickableButton" onclick="hello()">Click Me!</button>
+    <p id="output"></p>
+  </body>
+</html>
