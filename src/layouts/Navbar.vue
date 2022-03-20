@@ -2,7 +2,7 @@
   <div class="w-full h-screen bg-primary translate-y-100 transform fixed top-0 overflow-hidden transition duration-300 ease-in-out z-auto" :class="!toggleMenu && '-translate-x-full'">
     <div class="w-full h-full flex flex-col justify-start items-center gap-10 text-3xl text-secondary mt-24">
       <router-link to="/" @click="toggleMenu = false">Home</router-link>
-      <router-link to="/account" @click="toggleMenu = false" v-if="this.$store.state.user">Acount</router-link>
+      <router-link to="/account" @click="toggleMenu = false" v-if="this.$store.state.user">Account</router-link>
       <button @click="logout" v-if="this.$store.state.user">Logout</button>
     </div>
   </div>

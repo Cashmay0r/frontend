@@ -21,7 +21,6 @@
         <div class="flex flex-col justify-center items-center w-full mt-5">
           <button class="btn w-1/2 bg-primary text-white" type="submit">Login</button>
         </div>
-        <i class="fa-solid fa-spinner h-5 w-5"></i>
       </form>
       <form @submit.prevent="resetPassword" v-if="resettingPassword" class="w-full">
         <div class="flex-row justify-start items-center w-full pb-3">
@@ -39,10 +38,6 @@
         <p class="text-sm w-full flex flex-row justify-center items-center">Don't have an account? <router-link to="/register" href="" class="underline label hover:no-underline text-primary">Register here</router-link></p>
       </div>
     </div>
-    <div>
-      <p class="text-black">RESULT: {{ result }}</p>
-      <button @click="calc" class="btn">Clcik</button>
-    </div>
   </div>
 </template>
 
@@ -51,28 +46,6 @@
   import {getAuth, signInWithEmailAndPassword, sendPasswordResetEmail} from 'firebase/auth';
   import {useRouter} from 'vue-router';
   import {useStore} from 'vuex';
-
-  const result = ref(null);
-
-  const calc = () => {
-    const arr = [7, 6, 5, 4, 3, 2, 1];
-    let lowestNum = 1000;
-    let largestDiff = 0;
-
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] < lowestNum) {
-        lowestNum = arr[i];
-      }
-      if (arr[i] - lowestNum > largestDiff) {
-        largestDiff = arr[i] - lowestNum;
-      }
-    }
-    if (largestDiff > 0) {
-      return largestDiff;
-    } else {
-      return -1;
-    }
-  };
 
   const user = reactive({
     email: '',
@@ -102,7 +75,7 @@
         const user = userCredential.user;
         console.log('User logged in');
         store.commit('setUser', user);
-        router.push('/account');
+        router.push('/list');
         // ...
       })
       .catch((error) => {

@@ -72,12 +72,12 @@
             .then(() => {
               console.log('User signed up', user);
               store.commit('setUser', user);
-              router.push('/account');
+              router.push('/list');
             })
             .catch((error) => {
               console.log('User signed up');
               store.commit('setUser', user);
-              router.push('/account');
+              router.push('/list');
             });
 
           // ...

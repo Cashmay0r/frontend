@@ -6,6 +6,7 @@ import Register from '@/pages/Register.vue';
 import Account from '@/pages/private/Account.vue';
 import {getUser} from '@/firebase';
 import store from '../store';
+import List from '@/pages/private/List.vue';
 // 2. Define some routes
 // Each route should map to a component.
 // We'll talk about nested routes later.
@@ -21,6 +22,13 @@ const routes = [
   {
     path: '/account',
     component: Account,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/list',
+    component: List,
     meta: {
       requiresAuth: true,
     },

@@ -3,6 +3,7 @@ const store = createStore({
   state() {
     return {
       user: null,
+      baseUrl: 'http://localhost:3000/',
     };
   },
   mutations: {
