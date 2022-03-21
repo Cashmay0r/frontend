@@ -8,17 +8,17 @@
 </template>
 
 <script setup>
-  import {getUser} from '@/firebase';
-  import {onMounted, ref} from 'vue';
-  onMounted(() => {
-    fetchUser();
-  });
-  const user = ref(null);
-  const fetchUser = async () => {
-    const response = await getUser();
-    user.value = response;
-    console.log(response);
-  };
+import { getUser } from "@/firebase";
+import { onMounted, ref } from "vue";
+onMounted(() => {
+  fetchUser();
+});
+const user = ref(null);
+const fetchUser = async () => {
+  const response = await getUser();
+  user.value = response;
+  console.log(response);
+};
 </script>
 
 <style></style>

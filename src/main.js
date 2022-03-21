@@ -3,6 +3,10 @@ import App from './App.vue';
 import '@/assets/css/tailwind.css';
 import store from '@/store/index.js';
 import router from '@/router/index.js';
-
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faPhone, faPlus, faTrash} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+library.add(faPlus, faTrash);
 const app = createApp(App).use(store).use(router);
+app.component('font-awesome-icon', FontAwesomeIcon);
 app.mount('#app');
